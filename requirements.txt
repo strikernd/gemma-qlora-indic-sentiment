@@ -1,0 +1,12 @@
+torch
+transformers
+peft
+trl
+datasets
+bitsandbytes
+accelerate
+pandas
+numpy
+python-dotenv
+scikit-learn
+huggingface_hub
