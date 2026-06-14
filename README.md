@@ -29,3 +29,26 @@ This project demonstrates how to perform Parameter-Efficient Fine-Tuning (PEFT) 
 Install the required dependencies:
 ```bash
 pip install torch pandas numpy python-dotenv datasets transformers peft trl bitsandbytes scikit-learn
+```
+
+Create a `.env` file in the root directory and add your Hugging Face token (required to download the Gemma base model):
+```env
+HF_TOKEN=your_huggingface_token_here
+```
+
+### 2. Training the Model
+Run the fine-tuning script. Make sure your `train.csv` is located in the correct data directory.
+```bash
+python train.py
+```
+Note: The script outputs the trained LoRA adapter weights to `./saved_model_gemma_finetuned`.
+
+### 3. Running Inference
+Generate predictions for the test dataset:
+```bash
+python infer.py
+```
+Outputs a `submission.csv` containing the parsed positive/negative sentiment labels.
+
+## License
+This code is released under the [MIT License](LICENSE). The Gemma base model is subject to Google's Gemma Terms of Use.
